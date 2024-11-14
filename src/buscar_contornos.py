@@ -8,7 +8,7 @@ output_folder = "C:/Users/jorga/Downloads/MENTA_JORGE_MANZANO/HOJAS RECORTADAS"
 
 
 
-# Iterar sobre cada imagen en la carpeta de entrada
+#recorrer cada imagen en la carpeta de entrada
 for idx, filename in enumerate(os.listdir(input_folder)):
     # Leer la imagen
     img_path = os.path.join(input_folder, filename)
@@ -31,7 +31,7 @@ for idx, filename in enumerate(os.listdir(input_folder)):
     min_contour_area = 1000  # Área mínima para considerar que es una hoja
     leaf_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_contour_area]
 
-    # Si hay contornos válidos, dibujar el contorno más grande en la máscara
+    # Si hay contornos correctos, dibujar el contorno más grande en la máscara
     if leaf_contours:
         # Dibujar el contorno en la máscara
         cv2.drawContours(mask, leaf_contours, -1, 255, thickness=cv2.FILLED)
