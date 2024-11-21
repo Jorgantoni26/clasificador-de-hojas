@@ -3,8 +3,8 @@ import numpy as np
 import os
 
 # Carpetas de entrada y salida
-input_folder = "C:/Users/jorga/Downloads/MENTA_JORGE_MANZANO"
-output_folder = "C:/Users/jorga/Downloads/MENTA_JORGE_MANZANO/HOJAS RECORTADAS"
+input_folder = "ruta_carpeta_origen"
+output_folder = "ruta_carpeta_salida"
 
 
 
@@ -27,7 +27,7 @@ for idx, filename in enumerate(os.listdir(input_folder)):
     # Crear una máscara vacía para dibujar el contorno de la hoja
     mask = np.zeros_like(gray)
 
-    # Filtrar contornos por área (ajustar el valor si es necesario)
+    # Filtrar contornos por área 
     min_contour_area = 1000  # Área mínima para considerar que es una hoja
     leaf_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_contour_area]
 
